@@ -1,4 +1,4 @@
-A simple  escrow contract with a frontend, developed with React (components). Although they are rarely used nowaday, I  practice them from time to time, as I will most probably encounter them in the future.
+A simple  escrow contract with a frontend, developed with React (components). Although they are rarely used nowadays, I  practice them from time to time, as I will most probably encounter them in the future.
 
 
 Technologies used:
