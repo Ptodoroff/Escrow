@@ -16,11 +16,14 @@ class App extends Component {
     const accounts = await web3.eth.getAccounts();
 
     const networkId = await web3.eth.net.getId();
+    console.log(networkId);
     const deployedNetwork = Escrow.networks[networkId];
     const contract = new web3.eth.Contract(
       Escrow.abi,
-      deployedNetwork && deployedNetwork.address,
+      deployedNetwork && deployedNetwork.address
     );
+    contract.options.address = "0xBC8575676AB797829f22b1fd1bB0E190b9671c72";
+    console.log(contract);  
 
     this.setState({ web3, accounts, contract }, this.updateBalance);
   };
@@ -36,14 +39,13 @@ class App extends Component {
     const { contract, accounts } = this.state;
     await contract.methods.deposit().send({
       from: accounts[0], 
-      value: e.target.elements[0].value
-    });
+      value:(e.target.elements[0].value)});
     this.updateBalance();
   }
 
   async release() {
     const { contract, accounts } = this.state;
-    await contract.methods.release().send({
+    await contract.methods.sendFunds().send({
       from: accounts[0], 
     });
     this.updateBalance();
