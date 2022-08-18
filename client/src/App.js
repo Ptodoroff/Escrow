@@ -10,7 +10,7 @@ class App extends Component {
     contract: undefined,
     balance: undefined
   }
-
+//---------------------------------------------------------
   async componentDidMount() {
     const web3 = await getWeb3();
     const accounts = await web3.eth.getAccounts();
@@ -27,6 +27,7 @@ class App extends Component {
 
     this.setState({ web3, accounts, contract }, this.updateBalance);
   };
+  //---------------------------------------------------------
 
   async updateBalance() {
     const { contract } = this.state;
@@ -51,6 +52,7 @@ class App extends Component {
     this.updateBalance();
   }
 
+  //---------------------------------------------------------
   render() {
     if (!this.state.web3) {
       return <div>Loading...</div>;
