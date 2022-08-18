@@ -34,7 +34,7 @@ contract( "Escrow", (accounts) => {
 
 
     it("Should allow only the intermediary  to release the funds to the beneficiary ", async() => {
-        escrow = await  Escrow.new (accounts[1], accounts[2],500);
+        escrow = await  Escrow.new (accounts[1], accounts[2],500, {from:accounts[0]});
         try {
            await escrow.sendFunds({from:accounts[0]})
         }
