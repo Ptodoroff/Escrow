@@ -2,9 +2,9 @@ A simple  escrow contract with a frontend, developed with React (components). Al
 
 
 Technologies used:
--Solidity for the contract
--Web3.js to help the UI communicate with the contract
--React and Bootsrap for the frontend
+- Solidity for the contract
+- Web3.js to help the UI communicate with the contract
+- React and Bootsrap for the frontend
 
 
 
